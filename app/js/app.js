@@ -2,14 +2,14 @@ var myApp = angular.module('myApp',['ngRoute']);
 
 myApp.config(['$routeProvider',function($routeProvider){
   $routeProvider
-  .when('/view1',{
-  	templateUrl:'views/view1.html'
+  .when('/login',{
+  	templateUrl:'views/login.html'
   })
-  .when('/view2',{
-  	templateUrl:'views/view2.html'
+  .when('/signup',{
+  	templateUrl:'views/signup.html'
   })
   .otherwise({
-  	 redirectTo:'view1'
+  	 redirectTo:'login'
   })
 }]);
 

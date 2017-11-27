@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+/*****************************
+  Typrgraph
+ *****************************/
+ html,body{
+   font-family: 'Roboto', sans-serif;
+   
+ }
+
+ h1,h2,h3,h4{
+  font-family: 'Roboto', sans-serif;
+
+ }
+
+ p{
+  font-family: 'Roboto', sans-serif;
+
+ }
+
+ .btn{
+   font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+   width: 20%;
+ }
+
+/*****************************
+  Navbar
+ *****************************/
+
+ .navbar{
+ 	margin:0;
+ 	padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar .navbar-brand{
+   font-family: 'Roboto', sans-serif;
+   font-weight: 900;
+   font-size: 28px;
+   color:#9E9E9E;
+
+}
+
+.nav li a{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+}
+
+/****************************
+  section login
+ ****************************/
+
+ #login{
+  font-family: 'Roboto', sans-serif;
+  margin:0 auto;
+  padding:0;
+
+ }
+
+ #login h1{
+ 	font-weight: 400;
+ 	text-align: center;
+ 	color:#9E9E9E;
+ }
+
+ #login p{
+ 	color:#9E9E9E;
+ 	text-align: center; 
+ }
+
+ #login form{
+ 	text-align: center;
+ }
+
+ #login .form-control{
+ 	height: 40px;
+    font-family: 'Roboto', sans-serif;
+    color:#757575;
+    font-weight: 300;
+
+ }
+
+/****************************
+  section signup
+ ****************************/
+
+ #signup{
+  font-family: 'Roboto', sans-serif;
+  margin:0 auto;
+  padding:0;
+
+ }
+
+ #signup h1{
+ 	font-weight: 400;
+ 	text-align: center;
+ 	color:#9E9E9E;
+ }
+
+ #signup p{
+ 	color:#9E9E9E;
+ 	text-align: center; 
+ }
+
+ #signup form{
+ 	text-align: center;
+ }
+
+ #signup .form-control{
+ 	height: 40px;
+    font-family: 'Roboto', sans-serif;
+    color:#757575;
+    font-weight: 300;
+
+ }

@@ -22,7 +22,7 @@ gulp.task('depsjs',function(){
 
 //bower task angular
 gulp.task('angulardeps',function(){
-  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js'])
+  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js','bower_components/firebase/firebase.js','bower_components/angularfire/dist/angularfire.min.js'])
   .pipe(gulp.dest('app/js/lib'))
   .pipe(reload({stream:true}));
 });
