@@ -8,14 +8,31 @@
 </head>
 <body>
  <nav class="navbar navbar-default" ng-include="'views/nav.html'"></nav>
-<div class="container" ng-view> </div>
+<div class="container" ng-view></div>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/lib/angular.min.js"></script>
 <script src="js/lib/angular-route.min.js"></script>
+<script src="js/lib/ng-file-upload.min.js"></script>
+<script src="js/lib/ng-file-upload-shim.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/recipes.js"></script>
+<script src="js/services/authentication.js"></script>
+<script src="js/controllers/register.js"></script>
 <script src="js/lib/firebase.js"></script>
 <script src="js/lib/angularfire.min.js"></script>
-<script src="js/app.js"></script>
-</body>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDKBZ2ZGWEHO-dNP3N_mM3YuGtDWlKCCFc",
+    authDomain: "recipe-box-8143c.firebaseapp.com",
+    databaseURL: "https://recipe-box-8143c.firebaseio.com",
+    projectId: "recipe-box-8143c",
+    storageBucket: "",
+    messagingSenderId: "1043963861289"
+  };
+  firebase.initializeApp(config);
+</script>
+
 </html>

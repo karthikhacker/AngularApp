@@ -1,0 +1,19 @@
+<section id="recipes">
+   <h3 class="text-center" ng-if="recipes.length == 0">Add new Recipe.</h3>
+  <div class="row" ng-if="recipes.length > 0">
+       <h2>Recipes</h2>
+	   <div class="col-sm-4"   ng-repeat="(key,recipe) in recipes">
+	      <div class="panel panel-default">
+	       	  <div class="panel-heading">
+	       	  	 <h3>{{recipe.name}}</h3>
+	       	  </div><!--End of panel-heading-->
+	       	  <div class="panel-body">
+	       	    <img ng-src="{{recipe.image}}" alt="Recipe image" class="img-responsive">
+	       	    <div class="read-more">
+	       	      <a href="#!/details/{{recipe.$id}}">Read more</a>
+	       	    </div>
+	       	  </div><!--End of panel-body-->
+	       </div><!--End of panel-->
+	  </div><!--End of col-sm-4-->
+	</div><!--End of row-->
+</section>

@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
+//var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -7,9 +7,6 @@ var reload = browserSync.reload;
 //scripts 
 gulp.task('scripts',function(){
   gulp.src(['app/js/**/*.js'])
-  .pipe(rename('app.min.js'))
-  .pipe(uglify())
-  .pipe(gulp.dest('bin'))
   .pipe(reload({stream:true}));
 });
 
@@ -22,12 +19,10 @@ gulp.task('depsjs',function(){
 
 //bower task angular
 gulp.task('angulardeps',function(){
-  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js','bower_components/firebase/firebase.js','bower_components/angularfire/dist/angularfire.min.js'])
+  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js','bower_components/angular/angular.min.js.map','bower_components/firebase/firebase.js','bower_components/angularfire/dist/angularfire.min.js','bower_components/ng-file-upload/ng-file-upload.min.js','bower_components/ng-file-upload/ng-file-upload-shim.min.js'])
   .pipe(gulp.dest('app/js/lib'))
   .pipe(reload({stream:true}));
 });
-
-
 
 //bower task css 
 

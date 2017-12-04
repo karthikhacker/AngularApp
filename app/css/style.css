@@ -13,6 +13,7 @@
 
  }
 
+ 
  p{
   font-family: 'Roboto', sans-serif;
 
@@ -21,11 +22,15 @@
  .btn{
    font-family: 'Roboto', sans-serif;
    font-weight: 300;
-   width: 20%;
+   
+ }
+
+ .fa{
+   font-weight: 300;
  }
 
 /*****************************
-  Navbar
+           Navbar
  *****************************/
 
  .navbar{
@@ -49,7 +54,7 @@
 }
 
 /****************************
-  section login
+       section login
  ****************************/
 
  #login{
@@ -75,7 +80,7 @@
  }
 
  #login .form-control{
- 	height: 40px;
+ 	  height: 40px;
     font-family: 'Roboto', sans-serif;
     color:#757575;
     font-weight: 300;
@@ -83,7 +88,7 @@
  }
 
 /****************************
-  section signup
+      section signup
  ****************************/
 
  #signup{
@@ -114,4 +119,67 @@
     color:#757575;
     font-weight: 300;
 
+ }
+
+ /****************************
+      section add recipe
+  ****************************/
+ #addrecipe{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding:0;
+ }
+
+ #addrecipe h2{
+  text-align: center;
+  color: #757575;
+  font-weight: 300;
+ }
+
+ #addrecipe .input{
+   border:0;
+ }
+
+ #addrecipe .tag-group{
+   border-bottom:1px solid #81D4FA;
+
+ }
+
+ #addrecipe .tags{
+   margin-top: 10px;
+   margin-bottom: 8px;
+ }
+
+ #addrecipe .form-group a{
+   color:#FF8A65;
+ }
+
+ #addrecipe .form-group a:hover{
+    text-decoration: none;
+ }
+
+ #addrecipe .tags .label{
+   width: 60%;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 400;
+   font-size: 13px;
+   margin-right: 5px;
+   
+ }
+
+ #addrecipe .label span{
+   padding-left: 8px;
+   cursor: pointer;
+ }
+
+ .well{
+   height: 40px;
+   padding-bottom: 5px;
+ }
+
+ /****************************
+      section recipe
+  ****************************/
+ #recipes{
+   margin-top: 15px;
  }

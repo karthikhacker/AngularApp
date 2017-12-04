@@ -1,0 +1,34 @@
+<section id="addrecipe">
+	<div class="row">
+	  <div class="col-sm-6 col-sm-offset-3">
+	  	<div class="panel panel-default">
+	  		<div class="panel-heading">
+	  			<h2>Add Recipe</h2>
+	  		</div><!--End of panel-heading-->
+	  		<div class="panel-body">
+	  			    	<form name="myForm" ng-submit="addRecipe()">
+	  						<div class="form-group" ng-class="{'has-error':myForm.recipename.$invalid && myForm.recipename.$touched}">
+	  							<input type="text" name="recipename" ng-model="recipename" class="form-control" placeholder="Recipe name" ng-required="true">
+	  							<small class="help-block" ng-show="myForm.recipename.$invalid && myForm.recipename.$touched">Recipe name is required.</small>
+	  						</div><!--End of form-group-->
+	  						<div class="form-group" ng-class="{'has-error':myForm.recipeimage.$invalid && myForm.recipeimage.$touched}">
+	  							<input type="text" name="recipeimage" ng-model="recipeimage" class="form-control" placeholder="Recipe image url" ng-required="true">
+	  							<small class="help-block" ng-show="myForm.recipeimage.$invalid && myForm.recipeimage.$touched">Recipe image is required.</small>
+	  						</div><!--End of form-group-->
+	  						<div class="form-group" ng-class="{'has-error':myForm.ingredients.$invalid && myForm.ingredients.$touched}">
+	  							<textarea name="ingredients" ng-model="recipeingredients" class="form-control" placeholder="Add Ingredients" ng-required="true"></textarea>
+	  							<small class="help-block" ng-show="myForm.ingredients.$invalid && myForm.ingredients.$touched">Add ingredients </small>
+	  						</div><!--End of form-group-->
+	  						<div class="form-group" ng-class="{'has-error':myForm.making.$invalid && myForm.making.$touched}">
+	  							<textarea name="making" ng-model="recipemaking" class="form-control" placeholder="Steps" ng-required="true"></textarea>
+	  							<small class="help-block" ng-show="myForm.making.$invalid && myForm.making.$touched">Add procedure </small>
+	  						</div><!--End of form-group-->
+	  						<div class="form-group">
+	  							<button ng-disabled="myForm.$invalid" class="btn btn-primary">CREATE RECIPE</button>
+	  						</div><!--End of form-group-->
+	  					</form>
+	  		</div><!--End of panel-body-->
+	  	</div><!--End of panel-->
+	  </div>
+    </div><!--End of row-->
+</section>
