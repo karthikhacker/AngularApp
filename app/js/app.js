@@ -22,6 +22,10 @@ myApp.config(['$routeProvider',function($routeProvider){
      templateUrl:'views/details.html',
      controller:'RecipeController'
   })
+  .when('/manage',{
+     templateUrl:'views/manage.html',
+     controller:'RecipeController'
+  })
   .otherwise({
     redirectTo:'/recipes'
   });  

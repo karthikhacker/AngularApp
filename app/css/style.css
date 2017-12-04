@@ -183,3 +183,10 @@
  #recipes{
    margin-top: 15px;
  }
+
+ /*****************************
+           Manage
+ *****************************/
+ #manage .img-manage{
+   width:100px;
+ }
