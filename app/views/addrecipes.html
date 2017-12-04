@@ -14,6 +14,9 @@
 	  						<div class="form-group" ng-class="{'has-error':myForm.recipeimage.$invalid && myForm.recipeimage.$touched}">
 	  							<input type="text" name="recipeimage" ng-model="recipeimage" class="form-control" placeholder="Recipe image url" ng-required="true">
 	  							<small class="help-block" ng-show="myForm.recipeimage.$invalid && myForm.recipeimage.$touched">Recipe image is required.</small>
+	  							<div ng-if="recipeimage" class="img-preview">
+	  								<img ng-src="{{recipeimage}}" alt="Preview" class="img-responsive">
+	  							</div><!--End of img-preview-->
 	  						</div><!--End of form-group-->
 	  						<div class="form-group" ng-class="{'has-error':myForm.ingredients.$invalid && myForm.ingredients.$touched}">
 	  							<textarea name="ingredients" ng-model="recipeingredients" class="form-control" placeholder="Add Ingredients" ng-required="true"></textarea>
