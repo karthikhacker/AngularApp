@@ -1,5 +1,15 @@
 var myApp = angular.module('myApp',['ngRoute','firebase','ngFileUpload']);
 
+//run method 
+myApp.run(['$rootScope','$location',function($rootScope,$location){
+  $rootScope.$on('$routeChangeError',function(event,next,previous,error){
+     if(error == 'AUTH_REQUIRED'){
+       $rootScope.message = "Sorry you must login to access this page";
+       $location.path('/login');
+     }
+  })
+}]);
+
 myApp.config(['$routeProvider',function($routeProvider){
   $routeProvider
   .when('/login',{
@@ -16,7 +26,12 @@ myApp.config(['$routeProvider',function($routeProvider){
   })
   .when('/recipes',{
     templateUrl:'views/recipes.html',
-    controller:'RecipeController'
+    controller:'RecipeController',
+    resolve:{
+      currentAuth:function(Authentication){
+        return Authentication.requireAuth();
+      }
+    }
   })
   .when('/details/:rId',{
      templateUrl:'views/details.html',
@@ -24,10 +39,15 @@ myApp.config(['$routeProvider',function($routeProvider){
   })
   .when('/manage',{
      templateUrl:'views/manage.html',
-     controller:'RecipeController'
+     controller:'RecipeController',
+     resolve:{
+       currentAuth:function(Authentication){
+         return Authentication.requireAuth();
+       }
+     }
   })
   .otherwise({
-    redirectTo:'/recipes'
+    redirectTo:'recipes'
   });  
   
 }]);

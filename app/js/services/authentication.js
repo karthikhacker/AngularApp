@@ -1,9 +1,10 @@
 myApp.factory('Authentication',['$rootScope','$firebaseAuth','$location','$firebaseObject',function($rootScope,$firebaseAuth,$location,$firebaseObject){
   
-  //firebase auth
-  var auth = $firebaseAuth();
+  
   //firebase ref 
   var ref = firebase.database().ref();
+  //firebase auth
+  var auth = $firebaseAuth();
   //object 
   var obj
   //loggedin user status 
@@ -50,7 +51,11 @@ myApp.factory('Authentication',['$rootScope','$firebaseAuth','$location','$fireb
 
     logout:function(){
        return auth.$signOut();
-    }//logout
+    },//logout
+
+    requireAuth:function(){
+      return auth.$requireSignIn();
+    }
   };
   return obj;
 }]);
