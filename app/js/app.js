@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',['ngRoute','firebase','ngFileUpload']);
+var myApp = angular.module('myApp',['ngRoute','firebase','ngFileUpload','ngAnimate']);
 
 //run method 
 myApp.run(['$rootScope','$location',function($rootScope,$location){

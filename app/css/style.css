@@ -121,6 +121,7 @@
 
  }
 
+
  /****************************
       section add recipe
   ****************************/
@@ -184,9 +185,105 @@
    margin-top: 15px;
  }
 
+ #recipes h2{
+   text-align: center;
+   color:#9E9E9E;
+ }
+
+ #recipes .panel{
+    opacity: .9;
+   -moz-transition: all 0.3s ease-out;
+ }
+
+ #recipes .panel:hover{
+   opacity: 1;
+   -moz-transform: scale(1.2);
+ }
+
+ #recipes .panel .panel-heading h3{
+   color:#9E9E9E;
+   font-weight: 300;
+ }
+
+ #recipes .read-more{
+   margin-top: 10px;
+ }
+
+ #recipes .read-more a{
+   color: #9E9E9E;
+   font-weight: 300;
+ }
+
+ #recipes .read-more a:hover{
+     color:#F44336;
+     opacity: 2;
+    -moz-transition: all 0.5s ease-out;
+     text-decoration: none;
+ }
+
+ /*****************************
+         Section details
+ *****************************/
+ #details{
+   margin:0;
+   padding:0;
+   border:0;
+ }
+
+ #details .col-sm-4 img{
+    margin-top:20px;
+    padding: 0;
+ }
+
+ #details h2, h4{
+   color: #9E9E9E;
+   font-weight: 300;
+   letter-spacing: 1px;
+ }
+
+ #details p{
+   color:#BDBDBD;
+   line-height: 10px;
+   font-weight: 400;
+   letter-spacing: 1px;
+ }
+
+
  /*****************************
            Manage
  *****************************/
+ #manage{
+   margin:0;
+   padding:0;
+ }
+
+ #manage h2{
+   color:#9E9E9E;
+   font-weight: 300;
+   letter-spacing: 1px;
+ }
+
+ #manage .alert{
+   margin-top: 20px;
+   color: #212121;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 600;
+ }
+
+ #recipes .table{
+   border: 1px solid #9E9E9E !important;
+   margin-top: 45px;
+ }
+
+ #recipe .table thead,th{
+   color: #9E9E9E;
+   font-weight: 300;
+ }
+
+ #recipes tbody tr td{
+   color: #9E9E9E;
+ }
+
  #manage .img-manage{
    width:100px;
  }

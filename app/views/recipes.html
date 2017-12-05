@@ -1,9 +1,16 @@
-<section id="recipes">
+<section id="recipes" >
    <h3 class="text-center" ng-if="recipes.length == 0">Add new Recipe.</h3>
   
   <div class="row" ng-if="recipes.length > 0">
-       <h2>Recipes</h2>
-       <div class="col-sm-4"   ng-repeat="(key,recipe) in recipes">
+       <div class="col-sm-12">
+       	 <h2>Recipes</h2>
+       </div><!--End of col-sm-12-->
+       <div class="col-sm-6 col-sm-offset-3">
+       	 <div class="form-group">
+       	 	<input type="text" name="query" ng-model="query" class="form-control" placeholder="SEARCH FOR RECIPES">
+       	 </div><!--End of form-group-->
+       </div><!--End of col-sm-6-->
+       <div ng-animate="'animate'" class="col-sm-4 recipes"   ng-repeat="(key,recipe) in recipes | filter : query">
 	      <div class="panel panel-default">
 	       	  <div class="panel-heading">
 	       	  	 <h3>{{recipe.name}}</h3>

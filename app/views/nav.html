@@ -12,14 +12,14 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-     <ul class="nav navbar-nav navbar-right">
-        <li ng-controller="RegistrationController"><a ng-show="currentUser" href=""><i class="fa fa-user"></i> {{currentUser.firstname}}</a></li>
-        <li><a ng-show="currentUser" href="#!/recipes"><i class="fa fa-cutlery" aria-hidden="true"></i>  Recipes ({{howManyRecipe}})</a></li>
-        <li ng-show="currentUser"><a href="#!/addrecipes"><i class="fa fa-plus"></i> Add recipe</a></li>
-        <li ng-show="currentUser"><a href="#!/manage"><i class="fa fa-cog"></i> Manage</a></li>
-        <li ng-controller="RegistrationController"><a ng-show="currentUser" href="#!/login" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
-        <li><a ng-hide="currentUser" href="#!/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li>
-        <li><a ng-hide="currentUser" href="#!/signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a></li>
+     <ul class="nav nav-pills navbar-right">
+        <li role="presentation" ng-controller="RegistrationController"><a  ng-show="currentUser" href=""><i class="fa fa-user"></i> {{currentUser.firstname}}</a></li>
+        <li role="presentation"><a ng-show="currentUser" href="#!/recipes"><i class="fa fa-cutlery" aria-hidden="true"></i>  Recipes ({{howManyRecipes}})</a></li>
+        <li role="presentation" ng-show="currentUser"><a  href="#!/addrecipes"><i class="fa fa-plus"></i> Add recipe</a></li>
+        <li role="presentation" ng-show="currentUser"><a  href="#!/manage"><i class="fa fa-cog"></i> Manage</a></li>
+        <li role="presentation" ng-controller="RegistrationController"><a  ng-show="currentUser" href="#!/login" ng-click="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        <li role="presentation"><a ng-hide="currentUser" href="#!/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign in</a></li>
+        <li role="presentation"><a  ng-hide="currentUser" href="#!/signup"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

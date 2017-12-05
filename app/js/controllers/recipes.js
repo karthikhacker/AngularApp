@@ -8,7 +8,15 @@ myApp.controller('RecipeController',['$scope','$rootScope','$firebaseArray','$ro
      var recipeRef = ref.child("users").child(authUser.uid).child("recipes");
      var recipeInfo = $firebaseArray(recipeRef);
 
+     //No of recipes 
+      recipeInfo.$loaded().then(function(data){
+         $rootScope.howManyRecipes = recipeInfo.length;
+      });
 
+     //update no of recipe  data
+     recipeInfo.$watch(function(){
+       $rootScope.howManyRecipes = recipeInfo.length;
+     }); 
     //Add recipe 
     $scope.addRecipe = function(){
        recipeInfo.$add({
@@ -22,7 +30,7 @@ myApp.controller('RecipeController',['$scope','$rootScope','$firebaseArray','$ro
            $scope.recipeimage = "";
            $scope.recipeingredients = "";
            $scope.recipemaking = "";
-           $location.path('./recipes');
+           $location.path('/recipes');
         }).catch(function(error){
             console.log(error);
        });
@@ -34,53 +42,51 @@ myApp.controller('RecipeController',['$scope','$rootScope','$firebaseArray','$ro
    
    //Details page  
    var id = $routeParams.rId;
-   var dRef = ref.child("users").child(authUser.uid).child("recipes").child(id);
+ 
+   var dRef = ref.child("users").child(authUser.uid).child("recipes/"+id);
    $scope.recipe = $firebaseObject(dRef);
-   console.log($scope.recipe);
+   //console.log($scope.recipe);
    
   //Manage 
- // var ref = firebase.database().ref('recipes');
- // $scope.manage = $firebaseArray(ref);
-    //console.log($scope.manage);
+ 
+  $scope.manage = recipeInfo;
+  //console.log($scope.manage);
 
   //Delete Recipe 
- // $scope.deleteRecipe = function(key){
- //   var ref = firebase.database().ref("recipes");
-   // $scope.manage.$remove(key).then(function(ref){
-      // console.log("Deleted");
-     //  $scope.message = "Recipe deleted";
-   // }).catch(function(error){
-    //   console.log(error);
-   // });
- // };
+  $scope.deleteRecipe = function(key){
+
+    $scope.manage.$remove(key).then(function(ref){
+       console.log("Deleted");
+      $scope.msg = "Recipe deleted";
+   }).catch(function(error){
+       console.log(error);
+    });
+ };
 
   
 
   //Edit Recipe 
- // $scope.editRecipe = function(info){
-    // var ref = firebase.database().ref('recipes');
-    // $scope.manageedit = info;
-//
- // }
+     $scope.editRecipe = function(info){
+     $scope.manageedit = info;
+
+  }
 
  //Update recipe
- //$scope.updateRecipe = function(id){
-  // console.log(id);
-  // var ref = firebase.database().ref('recipes/'+id);
-   //ref.update({
-    // name:$scope.manageedit.name,
-    // image:$scope.manageedit.image,
-    // ingredients:$scope.manageedit.ingredients,
-    // making:$scope.manageedit.making
-  // }).then(function(){
-    //  console.log("Updated");
-
- //  }).catch(function(error){
-      //console.log(error);
-
-  // });
-   // $scope.msg = "Updated recipe";
- //}
+ $scope.updateRecipe = function(id){
+   //console.log(id);
+   var EditRef = ref.child('users').child(authUser.uid).child('recipes/'+id);
+   EditRef.update({
+     name:$scope.manageedit.name,
+     image:$scope.manageedit.image,
+     ingredients:$scope.manageedit.ingredients,
+     making:$scope.manageedit.making
+   }).then(function(){
+      console.log("updated");
+   }).catch(function(error){
+       console.log(error);
+   });
+   $scope.msg = "Recipe updated successfully.";
+ };
       }
     });//onStateChanged
 

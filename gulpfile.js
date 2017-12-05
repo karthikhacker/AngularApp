@@ -19,7 +19,7 @@ gulp.task('depsjs',function(){
 
 //bower task angular
 gulp.task('angulardeps',function(){
-  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js','bower_components/angular/angular.min.js.map','bower_components/firebase/firebase.js','bower_components/angularfire/dist/angularfire.min.js','bower_components/ng-file-upload/ng-file-upload.min.js','bower_components/ng-file-upload/ng-file-upload-shim.min.js'])
+  return gulp.src(['bower_components/angular/angular.min.js','bower_components/angular-route/angular-route.min.js','bower_components/angular/angular.min.js.map','bower_components/firebase/firebase.js','bower_components/angularfire/dist/angularfire.min.js','bower_components/ng-file-upload/ng-file-upload.min.js','bower_components/ng-file-upload/ng-file-upload-shim.min.js','bower_components/angular-animate/angular-animate.min.js'])
   .pipe(gulp.dest('app/js/lib'))
   .pipe(reload({stream:true}));
 });
